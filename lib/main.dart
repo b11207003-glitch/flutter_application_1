@@ -31,12 +31,12 @@ class NumberListPage extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
     );
 
-    var listView = ListView.builder(
-      itemCount: 30,
-      itemBuilder: (context, index) {
-        final number = index + 1;
-        return ListTile(title: Text('$number'));
-      },
+    var listView = ListView(
+      children: [
+        ListTile(title: Text("第一項")),
+        ListTile(title: Text("第二項")),
+        ListTile(title: Text("第三項")),
+      ],
     );
 
     return Scaffold(appBar: appBar, body: listView);
