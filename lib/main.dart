@@ -26,23 +26,19 @@ class NumberListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('1 到 30 列表'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
-      body: ListView.builder(
-        itemCount: 30,
-        itemBuilder: (context, index) {
-          final number = index + 1;
-          return ListTile(
-            leading: CircleAvatar(
-              child: Text('$number'),
-            ),
-            title: Text('$number'),
-          );
-        },
-      ),
+    var appBar = AppBar(
+      title: const Text('1 到 30 列表'),
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
     );
+
+    var listView = ListView.builder(
+      itemCount: 30,
+      itemBuilder: (context, index) {
+        final number = index + 1;
+        return ListTile(title: Text('$number'));
+      },
+    );
+
+    return Scaffold(appBar: appBar, body: listView);
   }
 }
